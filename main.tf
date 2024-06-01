@@ -13,6 +13,16 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "az-rg" {
-  location = "westus2"
-  name     = "AzureTfResourceGroup"
+  location = var.AzRgLocation
+  name     = var.AzRgName
+  tags = var.tags
+}
+
+resource "azurerm_storage_account" "az-sa" {
+  account_replication_type = var.AzSaAccountReplicationType
+  account_tier             = var.AzSaTier
+  location                 = azurerm_resource_group.az-rg.location
+  name                     = var.AzSaName
+  resource_group_name      = azurerm_resource_group.az-rg.name
+  tags = var.tags
 }
