@@ -29,6 +29,10 @@ Check terraform code using below command
 ```
 terraform validate
 ```
+Verify terraform infrastructure using below command
+```
+terraform plan
+```
 Deploy terraform code using below command
 ```
 terraform deploy
