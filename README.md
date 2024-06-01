@@ -21,6 +21,12 @@ az login
 ```
 
 ## Setup
+Create a Terraform variable file named **_azure.auto.tfvars_**. Add below variables
+```
+tags = {environment = "",owner="",purpose=""}
+```
+
+## Deploy
 Setup terraform project using below command
 ```
 terraform init
